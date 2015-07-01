@@ -1,8 +1,10 @@
 package bots
 
 var bots = map[string]bool{
-	"bitlybot":            true,
-	"Googlebot-Image/1.0": true,
+	"bitlybot":                   true,
+	"crawlernutchtest/Nutch-1.9": true,
+	"ExactSeekCrawler/1.0":       true,
+	"Googlebot-Image/1.0":        true,
 	"LinkedInBot/1.0 (compatible; Mozilla/5.0; Jakarta Commons-HttpClient/3.1 +http://www.linkedin.com)":                                                                                                   true,
 	"LivelapBot/0.2 (http://site.livelap.com/crawler)":                                                                                                                                                     true,
 	"Mozilla/5.0 (compatible; AhrefsBot/5.0; +http://ahrefs.com/robot/)":                                                                                                                                   true,
@@ -21,9 +23,11 @@ var bots = map[string]bool{
 	"Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)":                                                                                                                               true,
 	"Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)":                                                                                                                                     true,
 	"Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)": true,
+	"spiderbot":       true,
 	"TelegramBot":     true,
 	"Traackr.com Bot": true,
 	"Twitterbot/1.0":  true,
+	"voltron":         true,
 }
 
 func IsBot(ua string) bool {
