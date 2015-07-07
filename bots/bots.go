@@ -1,3 +1,6 @@
+// This package helps the backend determine which clients are bots or crawlers.
+// In Write.as, this is used to prevent certain things when viewing posts, like
+// incrementing the view count.
 package bots
 
 var bots = map[string]bool{
@@ -30,6 +33,8 @@ var bots = map[string]bool{
 	"voltron":         true,
 }
 
+// IsBot returns whether or not the provided User-Agent string is a known bot
+// or crawler.
 func IsBot(ua string) bool {
 	if _, ok := bots[ua]; ok {
 		return true
