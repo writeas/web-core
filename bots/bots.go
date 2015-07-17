@@ -4,10 +4,11 @@
 package bots
 
 var bots = map[string]bool{
-	"bitlybot":                   true,
-	"crawlernutchtest/Nutch-1.9": true,
-	"ExactSeekCrawler/1.0":       true,
-	"Googlebot-Image/1.0":        true,
+	"bitlybot":                                                                            true,
+	"crawlernutchtest/Nutch-1.9":                                                          true,
+	"Domain Re-Animator Bot (http://domainreanimator.com) - support@domainreanimator.com": true,
+	"ExactSeekCrawler/1.0":                                                                true,
+	"Googlebot-Image/1.0":                                                                 true,
 	"LinkedInBot/1.0 (compatible; Mozilla/5.0; Jakarta Commons-HttpClient/3.1 +http://www.linkedin.com)":                                                                                                   true,
 	"LivelapBot/0.2 (http://site.livelap.com/crawler)":                                                                                                                                                     true,
 	"Mozilla/5.0 (compatible; AhrefsBot/5.0; +http://ahrefs.com/robot/)":                                                                                                                                   true,
@@ -28,11 +29,12 @@ var bots = map[string]bool{
 	"Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)":                                                                                                                                     true,
 	"Mozilla/5.0 (compatible; zitebot support [at] zite [dot] com +http://zite.com)":                                                                                                                       true,
 	"Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)": true,
-	"spiderbot":       true,
-	"TelegramBot":     true,
-	"Traackr.com Bot": true,
-	"Twitterbot/1.0":  true,
-	"voltron":         true,
+	"spiderbot":                     true,
+	"TelegramBot":                   true,
+	"TelegramBot (like TwitterBot)": true,
+	"Traackr.com Bot":               true,
+	"Twitterbot/1.0":                true,
+	"voltron":                       true,
 }
 
 // IsBot returns whether or not the provided User-Agent string is a known bot
