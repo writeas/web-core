@@ -4,7 +4,7 @@
 # Generates a Go map containing all bots that have accessed Write.as
 #
 
-cat /var/log/$1 | grep -i 'bot\|crawler\|voltron' | awk -F\" '{print $4}' | sort | uniq > bots.txt
+cat /var/log/$1 | grep -i 'bot\|spider\|crawl\|scraper\|indexer\|voltron' | awk -F\" '{print $4}' | sort | uniq > bots.txt
 
 rm bots.go
 
