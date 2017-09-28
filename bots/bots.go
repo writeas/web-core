@@ -219,6 +219,7 @@ var bots = map[string]bool{
 
 var botPrefixes = []string{
 	"http.rb/2.2.2 (Mastodon",
+	"PHP/",
 }
 
 // IsBot returns whether or not the provided User-Agent string is a known bot
