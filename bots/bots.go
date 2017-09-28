@@ -225,6 +225,9 @@ var botPrefixes = []string{
 // IsBot returns whether or not the provided User-Agent string is a known bot
 // or crawler.
 func IsBot(ua string) bool {
+	if ua == "" {
+		return true
+	}
 	if _, ok := bots[ua]; ok {
 		return true
 	}
