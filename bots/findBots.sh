@@ -1,7 +1,10 @@
 #!/bin/bash
 
 #
-# Generates a Go map containing all bots that have accessed Write.as
+# Generates a Go map containing all bots that have accessed Write.as from the
+# application logs stored in /var/log/
+#
+# usage: findBots.sh application.log
 #
 
 cat /var/log/$1 | grep -i 'bot\|spider\|crawl\|scraper\|indexer\|voltron' | awk -F\" '{print $4}' | sort | uniq > bots.txt
