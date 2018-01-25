@@ -7,6 +7,11 @@
 # usage: findBots.sh application.log
 #
 
+if [ -z $1 ]; then
+	echo usage: findBots.sh [logfilename]
+	exit 1
+fi
+
 cat /var/log/$1 | grep -i 'bot\|spider\|crawl\|scraper\|indexer\|voltron' | awk -F\" '{print $4}' | sort | uniq > bots.txt
 
 rm bots.go
