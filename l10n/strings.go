@@ -6,6 +6,8 @@ func Strings(lang string) map[string]string {
 	switch lang {
 	case "hu":
 		return phrasesHU
+	case "it":
+		return phrasesIT
 	default:
 		return phrases
 	}
