@@ -3,6 +3,8 @@
 // incrementing the view count.
 package bots
 
+import "strings"
+
 var bots = map[string]bool{
 	"ABACHOBot/8.14 (Windows NT 6.1 1.5; ko;)":                                 true,
 	"AddThis.com robot tech.support@clearspring.com":                           true,
@@ -215,11 +217,24 @@ var bots = map[string]bool{
 	"Y!J-ASR/0.1 crawler (http://www.yahoo-help.jp/app/answers/detail/p/595/a_id/42716/)": true,
 }
 
+var botPrefixes = []string{
+	"http.rb/2.2.2 (Mastodon",
+	"PHP/",
+}
+
 // IsBot returns whether or not the provided User-Agent string is a known bot
 // or crawler.
 func IsBot(ua string) bool {
+	if ua == "" {
+		return true
+	}
 	if _, ok := bots[ua]; ok {
 		return true
+	}
+	for _, p := range botPrefixes {
+		if strings.HasPrefix(ua, p) {
+			return true
+		}
 	}
 	return false
 }
