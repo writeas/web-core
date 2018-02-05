@@ -4,6 +4,8 @@ package l10n
 // translation.
 func Strings(lang string) map[string]string {
 	switch lang {
+	case "fr":
+		return phrasesFR
 	case "hu":
 		return phrasesHU
 	case "it":
