@@ -10,6 +10,8 @@ func Strings(lang string) map[string]string {
 		return phrasesHU
 	case "it":
 		return phrasesIT
+	case "ro":
+		return phrasesRO
 	default:
 		return phrases
 	}
