@@ -18,6 +18,8 @@ func Strings(lang string) map[string]string {
 		return phrasesJA
 	case "ro":
 		return phrasesRO
+	case "ru":
+		return phrasesRU
 	default:
 		return phrases
 	}

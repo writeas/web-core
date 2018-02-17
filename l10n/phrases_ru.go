@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesRU = map[string]string{
+	"Anonymous post":                 "Анонимная запись",
+	"Blogs":                          "Блоги",
+	"Enter":                          "Войти",
+	"Newer":                          "Новее",
+	"Older":                          "Старее",
+	"Posts":                          "Записи",
+	"Publish to...":                  "Опубликовать в...",
+	"Publish":                        "Опубликовать",
+	"Read more...":                   "Читать дальше...",
+	"This blog requires a password.": "Для этого блога нужен пароль.",
+	"Toggle theme":                   "Переключить тему",
+	"View posts":                     "Посмотреть записи",
+	"delete":                         "удалить",
+	"edit":                           "редактировать",
+	"move to...":                     "переместить в...",
+	"pin":                            "закрепить",
+	"published with write.as":  "опубликовано с помощью write.as",
+	"share modal ending":       "Отправить другу, поделиться с интернетом, или возможно твитнуть. Узнать больше.",
+	"share modal introduction": "У каждой опубликованной записи есть секретный, уникальный URL, которым можно поделиться с кем угодно. Этот URL:",
+	"share modal title":        "Поделиться записью",
+	"share":                    "поделиться",
+	"unpin":                    "открепить",
+}
