@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesMK = map[string]string{
+	"Anonymous post":                 "Анонимен напис",
+	"Blogs":                          "Блогови",
+	"Enter":                          "Влез",
+	"Newer":                          "Понови",
+	"Older":                          "Постари",
+	"Posts":                          "Написи",
+	"Publish to...":                  "Објави во...",
+	"Publish":                        "Објави",
+	"Read more...":                   "Прочитај повеќе...",
+	"This blog requires a password.": "Овој блог бара лозинка.",
+	"Toggle theme":                   "Вкчучи тема",
+	"View posts":                     "Види Написи",
+	"delete":                         "избриши",
+	"edit":                           "измени",
+	"move to...":                     "премести во...",
+	"pin":                            "закачи",
+	"published with write.as":  "Објавено со write.as",
+	"share modal ending":       "Испрати го на пријател, сподели преку интернет, или можеби твитувај. Научи повеќе.",
+	"share modal introduction": "Секој објавен напис има тајна, уникатна URL-адреса која можете да ја споделите со секого. Ова е таа URL адреса:",
+	"share modal title":        "Сподели го овој напис",
+	"share":                    "сподели",
+	"unpin":                    "откачи",
+}
