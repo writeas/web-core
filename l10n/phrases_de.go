@@ -1,5 +1,26 @@
 package l10n
 
 var phrasesDE = map[string]string{
-	"Read more...": "Weiterlesen...",
+	"Anonymous post":                 "Anonymer Beitrag",
+	"Blogs":                          "Blogs",
+	"Enter":                          "Eingabe",
+	"Newer":                          "Neuer",
+	"Older":                          "Älter",
+	"Posts":                          "Beiträge",
+	"Publish to...":                  "Veröffentlichen zu...",
+	"Publish":                        "Veröffentlichen",
+	"Read more...":                   "Weiterlesen...",
+	"This blog requires a password.": "Dieser Blog benötigt ein Passwort",
+	"Toggle theme":                   "Design ändern",
+	"View posts":                     "Beiträge ansehen",
+	"delete":                         "Löschen",
+	"edit":                           "Bearbeiten",
+	"move to...":                     "Verschieben nach...",
+	"pin":                            "Anheften",
+	"published with write.as":  "veröffentlicht mit write.as",
+	"share modal ending":       "Schicke es Freunden, teile es im Netz oder vielleicht tweete es. Lerne mehr.",
+	"share modal introduction": "Jeder veröffentlichte Beitrag hat eine geheime, einmalige URL, die du mit jedem teilen kannst. Die URL ist:",
+	"share modal title":        "Teile diesen Beitrag",
+	"share":                    "Teilen",
+	"unpin":                    "Lösen",
 }
