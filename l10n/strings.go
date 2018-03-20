@@ -22,6 +22,8 @@ func Strings(lang string) map[string]string {
 		return phrasesRO
 	case "ru":
 		return phrasesRU
+	case "sv":
+		return phrasesSV
 	default:
 		return phrases
 	}

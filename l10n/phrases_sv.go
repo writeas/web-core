@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesSV = map[string]string{
+	"Anonymous post":                 "Anonymt inlägg",
+	"Blogs":                          "Bloggar",
+	"Enter":                          "Visa",
+	"Newer":                          "Nyare",
+	"Older":                          "Äldre",
+	"Posts":                          "Inlägg",
+	"Publish to...":                  "Publicera till...",
+	"Publish":                        "Publicera",
+	"Read more...":                   "Läs mer...",
+	"This blog requires a password.": "Denna blogg kräver ett lösenord.",
+	"Toggle theme":                   "Växla tema",
+	"View posts":                     "Se Inlägg",
+	"delete":                         "radera",
+	"edit":                           "redigera",
+	"move to...":                     "flytta till...",
+	"pin":                            "fäst",
+	"published with write.as":  "publicerad med write.as",
+	"share modal ending":       "Skicka inlägget till en vän, dela det över webben, eller kanske tweeta det. Läs mer.",
+	"share modal introduction": "Varje publicerat inlägg har en hemlig, unik webbadress du kan dela med vem som helst. Detta är den webbadressen:",
+	"share modal title":        "Dela detta inlägg",
+	"share":                    "dela",
+	"unpin":                    "lossa",
+}
