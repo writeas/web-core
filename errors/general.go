@@ -26,4 +26,5 @@ var (
 	// User errors
 	ErrUserNotFound      = impart.HTTPError{http.StatusNotFound, "User doesn't exist."}
 	ErrUserNotFoundEmail = impart.HTTPError{http.StatusNotFound, "Please enter your username instead of your email address."}
+	ErrUsernameTaken     = impart.HTTPError{http.StatusConflict, "Username is already taken."}
 )
