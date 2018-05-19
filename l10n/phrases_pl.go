@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesPL = map[string]string{
+	"Anonymous post":                 "Anonimowy post",
+	"Blogs":                          "Blogi",
+	"Enter":                          "Wejdź",
+	"Newer":                          "Nowsze",
+	"Older":                          "Starsze",
+	"Posts":                          "Posty",
+	"Publish to...":                  "Opublikuj w...",
+	"Publish":                        "Opublikuj",
+	"Read more...":                   "Czytaj dalej...",
+	"This blog requires a password.": "Dostęp do tego bloga wymaga hasła.",
+	"Toggle theme":                   "Zmień motyw",
+	"View posts":                     "Pokaż teksty",
+	"delete":                         "usuń",
+	"edit":                           "edytuj",
+	"move to...":                     "przenieś do...",
+	"pin":                            "przypnij",
+	"published with write.as":  "opublkowano dzięki write.as",
+	"share modal ending":       "Wyślij go znajomemu, udostępnij w sieci, albo wstaw na twittera. Dowiedz się więcej.",
+	"share modal introduction": "Każdy opublikowany post ma sekretny, unikalny adres URL, którym możesz podzielić się z kimkolwiek chcesz. Oto on:",
+	"share modal title":        "Udostępnij ten post",
+	"share":                    "udostępnij",
+	"unpin":                    "odepnij",
+}

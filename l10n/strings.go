@@ -20,6 +20,8 @@ func Strings(lang string) map[string]string {
 		return phrasesJA
 	case "mk":
 		return phrasesMK
+	case "pl":
+		return phrasesPL
 	case "pt":
 		return phrasesPT
 	case "ro":
