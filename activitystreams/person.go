@@ -1,9 +1,7 @@
 package activitystreams
 
 type Person struct {
-	Context           []string  `json:"@context"`
-	Type              string    `json:"type"`
-	ID                string    `json:"id"`
+	BaseObject
 	Inbox             string    `json:"inbox"`
 	Outbox            string    `json:"outbox"`
 	PreferredUsername string    `json:"preferredUsername"`
@@ -18,11 +16,13 @@ type Person struct {
 
 func NewPerson(accountRoot string) *Person {
 	p := Person{
-		Type: "Person",
-		Context: []string{
-			"https://www.w3.org/ns/activitystreams",
+		BaseObject: BaseObject{
+			Type: "Person",
+			Context: []string{
+				"https://www.w3.org/ns/activitystreams",
+			},
+			ID: accountRoot,
 		},
-		ID:        accountRoot,
 		URL:       accountRoot,
 		Following: accountRoot + "/following",
 		Followers: accountRoot + "/followers",
