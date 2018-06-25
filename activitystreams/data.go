@@ -4,7 +4,7 @@ import "fmt"
 
 type (
 	BaseObject struct {
-		Context []string `json:"@context"`
+		Context []string `json:"@context,omitempty"`
 		Type    string   `json:"type"`
 		ID      string   `json:"id"`
 	}

@@ -11,9 +11,9 @@ const (
 type Activity struct {
 	BaseObject
 	Actor     string    `json:"actor"`
-	Published time.Time `json:"published"`
-	To        []string  `json:"to"`
-	CC        []string  `json:"cc"`
+	Published time.Time `json:"published,omitempty"`
+	To        []string  `json:"to,omitempty"`
+	CC        []string  `json:"cc,omitempty"`
 	Object    *Object   `json:"object"`
 }
 
@@ -23,11 +23,8 @@ func NewCreateActivity(o *Object) *Activity {
 			ID:   o.ID + "/activity",
 			Type: "Create",
 		},
-		Actor:     o.AttributedTo,
-		Published: o.Published,
-		To:        o.To,
-		CC:        o.CC,
-		Object:    o,
+		Actor:  o.AttributedTo,
+		Object: o,
 	}
 	return &a
 }
@@ -35,14 +32,14 @@ func NewCreateActivity(o *Object) *Activity {
 type Object struct {
 	BaseObject
 	Published    time.Time         `json:"published"`
-	Summary      *string           `json:"summary"`
+	Summary      *string           `json:"summary,omitempty"`
 	InReplyTo    *string           `json:"inReplyTo"`
 	URL          string            `json:"url"`
 	AttributedTo string            `json:"attributedTo"`
 	To           []string          `json:"to"`
-	CC           []string          `json:"cc"`
+	CC           []string          `json:"cc,omitempty"`
 	Content      string            `json:"content"`
-	ContentMap   map[string]string `json:"contentMap"`
+	ContentMap   map[string]string `json:"contentMap,omitempty"`
 }
 
 func NewNoteObject() *Object {

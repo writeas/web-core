@@ -23,7 +23,6 @@ func NewPerson(accountRoot string) *Person {
 			},
 			ID: accountRoot,
 		},
-		URL:       accountRoot,
 		Following: accountRoot + "/following",
 		Followers: accountRoot + "/followers",
 		Inbox:     accountRoot + "/inbox",
