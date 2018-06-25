@@ -41,3 +41,11 @@ func (p *Person) AddPubKey(k []byte) {
 		PublicKeyPEM: string(k),
 	}
 }
+
+func (p *Person) SetPrivKey(k []byte) {
+	p.PublicKey.privateKey = k
+}
+
+func (p *Person) GetPrivKey() []byte {
+	return p.PublicKey.privateKey
+}

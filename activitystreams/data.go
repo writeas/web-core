@@ -13,6 +13,7 @@ type (
 		ID           string `json:"id"`
 		Owner        string `json:"owner"`
 		PublicKeyPEM string `json:"publicKeyPem"`
+		privateKey   []byte
 	}
 
 	Image struct {
