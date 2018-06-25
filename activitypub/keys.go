@@ -1,68 +1,66 @@
 package activitypub
 
 import (
-	"crypto/rand"
+	"crypto"
 	"crypto/rsa"
 	"crypto/x509"
 	"encoding/pem"
 	"fmt"
+	"github.com/spacemonkeygo/openssl"
 	"log"
 )
 
 const keyBitSize = 2048
 
 // GenerateKey creates an RSA keypair.
-func GenerateKey() (*rsa.PrivateKey, error) {
-	priv, err := rsa.GenerateKey(rand.Reader, keyBitSize)
-	if err != nil {
-		return nil, err
-	}
-
-	err = priv.Validate()
-	if err != nil {
-		return nil, err
-	}
-
-	return priv, nil
+func GenerateKey() (openssl.PrivateKey, error) {
+	return openssl.GenerateRSAKey(keyBitSize)
 }
 
 // EncodeKeysToPEM encodes public and private key to PEM format, returning
 // them in that order.
-func EncodeKeysToPEM(privKey *rsa.PrivateKey) ([]byte, []byte) {
-	privDER := x509.MarshalPKCS1PrivateKey(privKey)
-
-	// pem.Block
-	privBlock := pem.Block{
-		Type:  "RSA PRIVATE KEY",
-		Bytes: privDER,
-	}
-
-	// Private key in PEM format
-	privPEM := pem.EncodeToMemory(&privBlock)
-
-	// Encode public key
-	pubKey, ok := privKey.Public().(*rsa.PublicKey)
-	if !ok {
-		log.Printf("Public key isn't RSA!")
+func EncodeKeysToPEM(privKey openssl.PrivateKey) (pubPEM []byte, privPEM []byte) {
+	var err error
+	privPEM, err = privKey.MarshalPKCS1PrivateKeyPEM()
+	if err != nil {
+		log.Printf("Unable to marshal private key: %v", err)
 		return nil, nil
 	}
-	pubDER := x509.MarshalPKCS1PublicKey(pubKey)
-	pubBlock := pem.Block{
-		Type:  "PUBLIC KEY",
-		Bytes: pubDER,
-	}
-	pubPEM := pem.EncodeToMemory(&pubBlock)
 
-	return pubPEM, privPEM
+	pubPEM, err = privKey.MarshalPKIXPublicKeyPEM()
+	if err != nil {
+		log.Printf("Unable to marshal public key: %v", err)
+		return nil, nil
+	}
+	return
+}
+
+func parsePrivateKey(der []byte) (crypto.PrivateKey, error) {
+	if key, err := x509.ParsePKCS1PrivateKey(der); err == nil {
+		return key, nil
+	}
+	if key, err := x509.ParsePKCS8PrivateKey(der); err == nil {
+		switch key := key.(type) {
+		case *rsa.PrivateKey:
+			return key, nil
+		default:
+			return nil, fmt.Errorf("found unknown private key type in PKCS#8 wrapping")
+		}
+	}
+	if key, err := x509.ParseECPrivateKey(der); err == nil {
+		return key, nil
+	}
+
+	return nil, fmt.Errorf("failed to parse private key")
 }
 
 // DecodePrivateKey encodes public and private key to PEM format, returning
 // them in that order.
-func DecodePrivateKey(k []byte) (*rsa.PrivateKey, error) {
+func DecodePrivateKey(k []byte) (crypto.PrivateKey, error) {
 	block, _ := pem.Decode(k)
 	if block == nil || block.Type != "RSA PRIVATE KEY" {
 		return nil, fmt.Errorf("failed to decode PEM block containing private key")
 	}
 
-	return x509.ParsePKCS1PrivateKey(block.Bytes)
+	return parsePrivateKey(block.Bytes)
 }
