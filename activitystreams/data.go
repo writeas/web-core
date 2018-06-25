@@ -30,16 +30,16 @@ type OrderedCollection struct {
 	Last       string `json:"last,omitempty"`
 }
 
-func NewOrderedCollection(accountRoot string, items int) *OrderedCollection {
+func NewOrderedCollection(accountRoot, collType string, items int) *OrderedCollection {
 	oc := OrderedCollection{
 		BaseObject: BaseObject{
 			Context: []string{
 				"https://www.w3.org/ns/activitystreams",
 			},
-			ID:   accountRoot + "/outbox",
+			ID:   accountRoot + "/" + collType,
 			Type: "OrderedCollection",
 		},
-		First:      accountRoot + "/outbox?page=1",
+		First:      accountRoot + "/" + collType + "?page=1",
 		TotalItems: items,
 	}
 	return &oc
@@ -54,18 +54,18 @@ type OrderedCollectionPage struct {
 	OrderedItems []Activity `json:"orderedItems"`
 }
 
-func NewOrderedCollectionPage(accountRoot string, items, page int) *OrderedCollectionPage {
+func NewOrderedCollectionPage(accountRoot, collType string, items, page int) *OrderedCollectionPage {
 	ocp := OrderedCollectionPage{
 		BaseObject: BaseObject{
 			Context: []string{
 				"https://www.w3.org/ns/activitystreams",
 			},
-			ID:   fmt.Sprintf("%s/outbox?page=%d", accountRoot, page),
+			ID:   fmt.Sprintf("%s/%s?page=%d", accountRoot, collType, page),
 			Type: "OrderedCollectionPage",
 		},
 		TotalItems: items,
-		PartOf:     accountRoot + "/outbox",
-		Next:       fmt.Sprintf("%s/outbox?page=%d", accountRoot, page+1),
+		PartOf:     accountRoot + "/" + collType,
+		Next:       fmt.Sprintf("%s/%s?page=%d", accountRoot, collType, page+1),
 	}
 	return &ocp
 }
