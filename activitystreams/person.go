@@ -32,3 +32,12 @@ func NewPerson(accountRoot string) *Person {
 
 	return &p
 }
+
+func (p *Person) AddPubKey(k []byte) {
+	p.Context = append(p.Context, "https://w3id.org/security/v1")
+	p.PublicKey = PublicKey{
+		ID:           p.ID + "#main-key",
+		Owner:        p.ID,
+		PublicKeyPEM: string(k),
+	}
+}
