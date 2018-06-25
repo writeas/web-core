@@ -20,6 +20,9 @@ type Activity struct {
 func NewCreateActivity(o *Object) *Activity {
 	a := Activity{
 		BaseObject: BaseObject{
+			Context: []string{
+				"https://www.w3.org/ns/activitystreams",
+			},
 			ID:   o.ID + "/activity",
 			Type: "Create",
 		},
