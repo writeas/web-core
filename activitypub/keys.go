@@ -1,48 +1,28 @@
 package activitypub
 
 import (
-	"bytes"
 	"crypto"
 	"crypto/rsa"
 	"crypto/x509"
 	"encoding/pem"
 	"fmt"
+	"github.com/writeas/openssl-go"
 	"log"
-	"os/exec"
 )
 
 const keyBitSize = 2048
-
-func openssl(stdin []byte, args ...string) ([]byte, error) {
-	cmd := exec.Command("openssl", args...)
-
-	in := bytes.NewReader(stdin)
-	out := &bytes.Buffer{}
-	errs := &bytes.Buffer{}
-
-	cmd.Stdin, cmd.Stdout, cmd.Stderr = in, out, errs
-
-	if err := cmd.Run(); err != nil {
-		if len(errs.Bytes()) > 0 {
-			return nil, fmt.Errorf("error running %s (%s):\n %v", cmd.Args, err, errs.String())
-		}
-		return nil, err
-	}
-
-	return out.Bytes(), nil
-}
 
 // GenerateKeys creates an RSA keypair and returns the public and private key,
 // in that order.
 func GenerateKeys() (pubPEM []byte, privPEM []byte) {
 	var err error
-	privPEM, err = openssl(nil, "genrsa", fmt.Sprintf("%d", keyBitSize))
+	privPEM, err = openssl.Call(nil, "genrsa", fmt.Sprintf("%d", keyBitSize))
 	if err != nil {
 		log.Printf("Unable to generate private key: %v", err)
 		return nil, nil
 	}
 
-	pubPEM, err = openssl(privPEM, "rsa", "-in", "/dev/stdin", "-pubout")
+	pubPEM, err = openssl.Call(privPEM, "rsa", "-in", "/dev/stdin", "-pubout")
 	if err != nil {
 		log.Printf("Unable to get public key: %v", err)
 		return nil, nil
