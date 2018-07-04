@@ -218,7 +218,7 @@ var bots = map[string]bool{
 }
 
 var botPrefixes = []string{
-	"http.rb/2.2.2 (Mastodon",
+	"http.rb/",
 	"PHP/",
 }
 
