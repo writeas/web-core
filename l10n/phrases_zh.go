@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesZH = map[string]string{
+	"Anonymous post":                 "匿名文章",
+	"Blogs":                          "博客",
+	"Enter":                          "按下Enter按钮",
+	"Newer":                          "最近的博客",
+	"Older":                          "之前的博客",
+	"Posts":                          "文章",
+	"Publish to...":                  "发布到...",
+	"Publish":                        "发布",
+	"Read more...":                   "阅读更多",
+	"This blog requires a password.": "这篇博客需要密码",
+	"Toggle theme":                   "更换主题",
+	"View posts":                     "查看文章",
+	"delete":                         "删除",
+	"edit":                           "编辑",
+	"move to...":                     "移动到",
+	"pin":                            "固定文章",
+	"published with write.as":  "用write.as来发布",
+	"share modal ending":       "发送给朋友，或者线上分享，如果可能的话，分享到推特上。了解更多。",
+	"share modal introduction": "发布的每篇文章都有一个唯一的私有URL，你可以把它分享给任何人。这是URL：",
+	"share modal title":        "分享这篇文章",
+	"share":                    "分享",
+	"unpin":                    "取消固定",
+}
