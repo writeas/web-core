@@ -41,6 +41,7 @@ type Object struct {
 	AttributedTo string            `json:"attributedTo"`
 	To           []string          `json:"to"`
 	CC           []string          `json:"cc,omitempty"`
+	Name         string            `json:"name,omitempty"`
 	Content      string            `json:"content"`
 	ContentMap   map[string]string `json:"contentMap,omitempty"`
 }
@@ -49,6 +50,18 @@ func NewNoteObject() *Object {
 	o := Object{
 		BaseObject: BaseObject{
 			Type: "Note",
+		},
+		To: []string{
+			toPublic,
+		},
+	}
+	return &o
+}
+
+func NewArticleObject() *Object {
+	o := Object{
+		BaseObject: BaseObject{
+			Type: "Article",
 		},
 		To: []string{
 			toPublic,
