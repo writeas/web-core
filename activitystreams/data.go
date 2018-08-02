@@ -4,9 +4,9 @@ import "fmt"
 
 type (
 	BaseObject struct {
-		Context []string `json:"@context,omitempty"`
-		Type    string   `json:"type"`
-		ID      string   `json:"id"`
+		Context []interface{} `json:"@context,omitempty"`
+		Type    string        `json:"type"`
+		ID      string        `json:"id"`
 	}
 
 	PublicKey struct {
@@ -33,7 +33,7 @@ type OrderedCollection struct {
 func NewOrderedCollection(accountRoot, collType string, items int) *OrderedCollection {
 	oc := OrderedCollection{
 		BaseObject: BaseObject{
-			Context: []string{
+			Context: []interface{}{
 				"https://www.w3.org/ns/activitystreams",
 			},
 			ID:   accountRoot + "/" + collType,
@@ -57,7 +57,7 @@ type OrderedCollectionPage struct {
 func NewOrderedCollectionPage(accountRoot, collType string, items, page int) *OrderedCollectionPage {
 	ocp := OrderedCollectionPage{
 		BaseObject: BaseObject{
-			Context: []string{
+			Context: []interface{}{
 				"https://www.w3.org/ns/activitystreams",
 			},
 			ID:   fmt.Sprintf("%s/%s?page=%d", accountRoot, collType, page),

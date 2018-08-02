@@ -18,7 +18,7 @@ func NewPerson(accountRoot string) *Person {
 	p := Person{
 		BaseObject: BaseObject{
 			Type: "Person",
-			Context: []string{
+			Context: []interface{}{
 				"https://www.w3.org/ns/activitystreams",
 			},
 			ID: accountRoot,
