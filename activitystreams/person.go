@@ -12,6 +12,7 @@ type Person struct {
 	Followers         string    `json:"followers"`
 	Summary           string    `json:"summary"`
 	PublicKey         PublicKey `json:"publicKey"`
+	Endpoints         Endpoints `json:"endpoints"`
 }
 
 func NewPerson(accountRoot string) *Person {

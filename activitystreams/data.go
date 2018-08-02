@@ -16,6 +16,10 @@ type (
 		privateKey   []byte
 	}
 
+	Endpoints struct {
+		SharedInbox string `json:"sharedInbox"`
+	}
+
 	Image struct {
 		Type      string `json:"type"`
 		MediaType string `json:"mediaType"`
