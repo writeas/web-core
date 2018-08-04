@@ -1,3 +1,5 @@
+// Package activitystreams provides all the basic ActivityStreams
+// implementation needed for Write.as.
 package activitystreams
 
 import (
@@ -9,6 +11,8 @@ const (
 	toPublic  = "https://www.w3.org/ns/activitystreams#Public"
 )
 
+// Activity describes actions that have either already occurred, are in the
+// process of occurring, or may occur in the future.
 type Activity struct {
 	BaseObject
 	Actor     string    `json:"actor"`
@@ -18,6 +22,8 @@ type Activity struct {
 	Object    *Object   `json:"object"`
 }
 
+// NewCreateActivity builds a basic Create activity that includes the given
+// Object and the Object's AttributedTo property as the Actor.
 func NewCreateActivity(o *Object) *Activity {
 	a := Activity{
 		BaseObject: BaseObject{
@@ -33,6 +39,7 @@ func NewCreateActivity(o *Object) *Activity {
 	return &a
 }
 
+// Object is the primary base type for the Activity Streams vocabulary.
 type Object struct {
 	BaseObject
 	Published    time.Time         `json:"published"`
@@ -47,6 +54,8 @@ type Object struct {
 	ContentMap   map[string]string `json:"contentMap,omitempty"`
 }
 
+// NewNoteObject creates a basic Note object that includes the public
+// namespace in IRIs it's addressed to.
 func NewNoteObject() *Object {
 	o := Object{
 		BaseObject: BaseObject{
@@ -59,6 +68,8 @@ func NewNoteObject() *Object {
 	return &o
 }
 
+// NewArticleObject creates a basic Article object that includes the public
+// namespace in IRIs it's addressed to.
 func NewArticleObject() *Object {
 	o := Object{
 		BaseObject: BaseObject{
