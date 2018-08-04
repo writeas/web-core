@@ -20,7 +20,7 @@ func NewPerson(accountRoot string) *Person {
 		BaseObject: BaseObject{
 			Type: "Person",
 			Context: []interface{}{
-				"https://www.w3.org/ns/activitystreams",
+				Namespace,
 			},
 			ID: accountRoot,
 		},

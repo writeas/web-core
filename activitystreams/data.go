@@ -38,7 +38,7 @@ func NewOrderedCollection(accountRoot, collType string, items int) *OrderedColle
 	oc := OrderedCollection{
 		BaseObject: BaseObject{
 			Context: []interface{}{
-				"https://www.w3.org/ns/activitystreams",
+				Namespace,
 			},
 			ID:   accountRoot + "/" + collType,
 			Type: "OrderedCollection",
@@ -62,7 +62,7 @@ func NewOrderedCollectionPage(accountRoot, collType string, items, page int) *Or
 	ocp := OrderedCollectionPage{
 		BaseObject: BaseObject{
 			Context: []interface{}{
-				"https://www.w3.org/ns/activitystreams",
+				Namespace,
 			},
 			ID:   fmt.Sprintf("%s/%s?page=%d", accountRoot, collType, page),
 			Type: "OrderedCollectionPage",

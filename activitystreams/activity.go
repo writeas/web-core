@@ -5,7 +5,8 @@ import (
 )
 
 const (
-	toPublic = "https://www.w3.org/ns/activitystreams#Public"
+	Namespace = "https://www.w3.org/ns/activitystreams"
+	toPublic  = "https://www.w3.org/ns/activitystreams#Public"
 )
 
 type Activity struct {
@@ -21,7 +22,7 @@ func NewCreateActivity(o *Object) *Activity {
 	a := Activity{
 		BaseObject: BaseObject{
 			Context: []interface{}{
-				"https://www.w3.org/ns/activitystreams",
+				Namespace,
 			},
 			ID:   o.ID + "/activity",
 			Type: "Create",
