@@ -39,6 +39,23 @@ func NewCreateActivity(o *Object) *Activity {
 	return &a
 }
 
+// NewDeleteActivity builds a basic Delete activity that includes the given
+// Object and the Object's AttributedTo property as the Actor.
+func NewDeleteActivity(o *Object) *Activity {
+	a := Activity{
+		BaseObject: BaseObject{
+			Context: []interface{}{
+				Namespace,
+			},
+			ID:   o.ID,
+			Type: "Delete",
+		},
+		Actor:  o.AttributedTo,
+		Object: o,
+	}
+	return &a
+}
+
 // Object is the primary base type for the Activity Streams vocabulary.
 type Object struct {
 	BaseObject
