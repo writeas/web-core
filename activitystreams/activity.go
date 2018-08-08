@@ -30,7 +30,7 @@ func NewCreateActivity(o *Object) *Activity {
 			Context: []interface{}{
 				Namespace,
 			},
-			ID:   o.ID + "/activity",
+			ID:   o.ID,
 			Type: "Create",
 		},
 		Actor:  o.AttributedTo,
