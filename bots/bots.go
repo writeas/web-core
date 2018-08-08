@@ -210,14 +210,15 @@ var bots = map[string]bool{
 }
 
 var botPrefixes = []string{
-	"http.rb/",
-	"PHP/",
-	"python-requests/",
 	"Mozilla/5.0 (compatible; AhrefsBot/",
-	"Twitterbot/",
-	"TelegramBot",
 	"Mozilla/5.0 (compatible; Applebot/",
 	"Mozilla/5.0 (compatible; archive.org_bot",
+	"PHP/",
+	"TelegramBot",
+	"Twitterbot/",
+	"hackney/",
+	"http.rb/",
+	"python-requests/",
 }
 
 // IsBot returns whether or not the provided User-Agent string is a known bot
