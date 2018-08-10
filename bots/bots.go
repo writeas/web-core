@@ -210,6 +210,7 @@ var bots = map[string]bool{
 }
 
 var botPrefixes = []string{
+	"Friendica",
 	"Mozilla/5.0 (compatible; AhrefsBot/",
 	"Mozilla/5.0 (compatible; Applebot/",
 	"Mozilla/5.0 (compatible; archive.org_bot",
