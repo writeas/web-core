@@ -51,11 +51,11 @@ func NewOrderedCollection(accountRoot, collType string, items int) *OrderedColle
 
 type OrderedCollectionPage struct {
 	BaseObject
-	TotalItems   int        `json:"totalItems"`
-	PartOf       string     `json:"partOf"`
-	Next         string     `json:"next,omitempty"`
-	Prev         string     `json:"prev,omitempty"`
-	OrderedItems []Activity `json:"orderedItems"`
+	TotalItems   int           `json:"totalItems"`
+	PartOf       string        `json:"partOf"`
+	Next         string        `json:"next,omitempty"`
+	Prev         string        `json:"prev,omitempty"`
+	OrderedItems []interface{} `json:"orderedItems,omitempty"`
 }
 
 func NewOrderedCollectionPage(accountRoot, collType string, items, page int) *OrderedCollectionPage {
