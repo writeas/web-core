@@ -33,8 +33,9 @@ func NewCreateActivity(o *Object) *Activity {
 			ID:   o.ID,
 			Type: "Create",
 		},
-		Actor:  o.AttributedTo,
-		Object: o,
+		Actor:     o.AttributedTo,
+		Object:    o,
+		Published: o.Published,
 	}
 	return &a
 }
