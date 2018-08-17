@@ -40,6 +40,24 @@ func NewCreateActivity(o *Object) *Activity {
 	return &a
 }
 
+// NewUpdateActivity builds a basic Update activity that includes the given
+// Object and the Object's AttributedTo property as the Actor.
+func NewUpdateActivity(o *Object) *Activity {
+	a := Activity{
+		BaseObject: BaseObject{
+			Context: []interface{}{
+				Namespace,
+			},
+			ID:   o.ID,
+			Type: "Update",
+		},
+		Actor:     o.AttributedTo,
+		Object:    o,
+		Published: o.Published,
+	}
+	return &a
+}
+
 // NewDeleteActivity builds a basic Delete activity that includes the given
 // Object and the Object's AttributedTo property as the Actor.
 func NewDeleteActivity(o *Object) *Activity {
