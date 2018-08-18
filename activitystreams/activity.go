@@ -112,6 +112,7 @@ type Object struct {
 	Name         string            `json:"name,omitempty"`
 	Content      string            `json:"content"`
 	ContentMap   map[string]string `json:"contentMap,omitempty"`
+	Tag          []Tag             `json:"tag"`
 }
 
 // NewNoteObject creates a basic Note object that includes the public
