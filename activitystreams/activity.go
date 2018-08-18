@@ -22,6 +22,15 @@ type Activity struct {
 	Object    *Object   `json:"object"`
 }
 
+type FollowActivity struct {
+	BaseObject
+	Actor     string    `json:"actor"`
+	Published time.Time `json:"published,omitempty"`
+	To        []string  `json:"to,omitempty"`
+	CC        []string  `json:"cc,omitempty"`
+	Object    string    `json:"object"`
+}
+
 // NewCreateActivity builds a basic Create activity that includes the given
 // Object and the Object's AttributedTo property as the Actor.
 func NewCreateActivity(o *Object) *Activity {
@@ -71,6 +80,21 @@ func NewDeleteActivity(o *Object) *Activity {
 		},
 		Actor:  o.AttributedTo,
 		Object: o,
+	}
+	return &a
+}
+
+// NewFollowActivity builds a basic Follow activity.
+func NewFollowActivity(actorIRI, followeeIRI string) *FollowActivity {
+	a := FollowActivity{
+		BaseObject: BaseObject{
+			Context: []interface{}{
+				Namespace,
+			},
+			Type: "Follow",
+		},
+		Actor:  actorIRI,
+		Object: followeeIRI,
 	}
 	return &a
 }
