@@ -49,6 +49,22 @@ func parsePrivateKey(der []byte) (crypto.PrivateKey, error) {
 	return nil, fmt.Errorf("failed to parse private key")
 }
 
+func parsePublicKey(der []byte) (crypto.PublicKey, error) {
+	if key, err := x509.ParsePKCS1PublicKey(der); err == nil {
+		return key, nil
+	}
+	if key, err := x509.ParsePKIXPublicKey(der); err == nil {
+		switch key := key.(type) {
+		case *rsa.PublicKey:
+			return key, nil
+		default:
+			return nil, fmt.Errorf("found unknown public key type in PKIX wrapping")
+		}
+	}
+
+	return nil, fmt.Errorf("failed to parse public key")
+}
+
 // DecodePrivateKey encodes public and private key to PEM format, returning
 // them in that order.
 func DecodePrivateKey(k []byte) (crypto.PrivateKey, error) {
@@ -58,4 +74,18 @@ func DecodePrivateKey(k []byte) (crypto.PrivateKey, error) {
 	}
 
 	return parsePrivateKey(block.Bytes)
+}
+
+// DecodePublicKey decodes public keys
+func DecodePublicKey(k []byte) (crypto.PublicKey, error) {
+	block, _ := pem.Decode(k)
+	if block == nil || block.Type != "PUBLIC KEY" {
+		if block != nil {
+			return nil, fmt.Errorf("failed to decode PEM block containing public key. type: %v", block.Type)
+		} else {
+			return nil, fmt.Errorf("failed to decode PEM block containing public key.")
+		}
+	}
+
+	return parsePublicKey(block.Bytes)
 }
