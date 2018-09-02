@@ -36,6 +36,8 @@ func Strings(lang string) map[string]string {
 		return phrasesRU
 	case "sv":
 		return phrasesSV
+	case "tg":
+		return phrasesTG
 	case "zh":
 		return phrasesZH
 	default:

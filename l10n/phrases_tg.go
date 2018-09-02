@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesTG = map[string]string{
+	"Anonymous post":                 "Почтаи пинҳонӣ",
+	"Blogs":                          "Блогҳо",
+	"Enter":                          "Дохил",
+	"Newer":                          "Баъдтар",
+	"Older":                          "Пеш аз он",
+	"Posts":                          "Мундариҷа",
+	"Publish to...":                  "нашр дар...",
+	"Publish":                        "Нашр",
+	"Read more...":                   "Бештар бихонед...",
+	"This blog requires a password.": "Ин блог бояд паролро талаб кунад.",
+	"Toggle theme":                   "тағйир намои",
+	"View posts":                     "Намоиши мундариҷа",
+	"delete":                         "Нест кардан",
+	"edit":                           "Таҳрири",
+	"move to...":                     "Гузариш ба",
+	"pin":                            "пин",
+	"published with write.as":  "бо нашр шуд аз write.as",
+	"share modal ending":       "Ба дӯстонатон фиристед, дар веб ё мубоҳиса дар бораи он мубодила кунед. Бештар омӯзед.",
+	"share modal introduction": "Ҳар як почтаи дорои адреси махфие, ки шумо метавонед бо дигарон мубодила кунед. Ин суроға:",
+	"share modal title":        "Ба шарикиӣ ин мундариҷа",
+	"share":                    "Ба шарикӣ",
+	"unpin":                    "Аз пин хабардори",
+}
