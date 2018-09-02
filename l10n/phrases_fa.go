@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesFA = map[string]string{
+	"Anonymous post":                 "پست ناشناس",
+	"Blogs":                          "وبلاگ‌ها",
+	"Enter":                          "ورود",
+	"Newer":                          "بعدتر",
+	"Older":                          "قبل‌تر",
+	"Posts":                          "مطالب",
+	"Publish to...":                  "انتشار در...",
+	"Publish":                        "انتشار",
+	"Read more...":                   "بیشتر بخوانید...",
+	"This blog requires a password.": "ورود به این وبلاگ نیازمند گذرواژه است.",
+	"Toggle theme":                   "تغییر نمایه",
+	"View posts":                     "مشاهده‌ی مطالب",
+	"delete":                         "حذف",
+	"edit":                           "ویرایش",
+	"move to...":                     "انتقال به...",
+	"pin":                            "پین کردن",
+	"published with write.as":  "قدرت گرفته از write.as",
+	"share modal ending":       "برای دوستانتان بفرستید، در بستر وب اشتراک بگذارید، یا درباره‌اش توییت کنید. بیشتر بیاموزید.",
+	"share modal introduction": "هر پست یک آدرس محرمانه‌ی یکتا دارد که می‌توانید با دیگران به اشتراک بگذارید. این آن آدرس است:",
+	"share modal title":        "به‌اشتراک‌گذاری این مطلب",
+	"share":                    "به‌اشتراک‌گذاری",
+	"unpin":                    "از پین درآوردن",
+}
