@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesAR = map[string]string{
+	"Anonymous post":                 "منشور مجهول المصدر",
+	"Blogs":                          "المدونات",
+	"Enter":                          "أدخل",
+	"Newer":                          "أحدث",
+	"Older":                          "اقدم",
+	"Posts":                          "المشاركات",
+	"Publish to...":                  "نشر إلى...",
+	"Publish":                        "نشر",
+	"Read more...":                   "اقرأ أكثر...",
+	"This blog requires a password.": "هذه المدونة تتطلب کلمة المرور.",
+	"Toggle theme":                   "غیر القالب",
+	"View posts":                     "مشاهدة المنشورات",
+	"delete":                         "حذف",
+	"edit":                           "تصحيح",
+	"move to...":                     "الانتقال إلى...",
+	"pin":                            "دبس",
+	"published with write.as":  "مدعوم من write.as",
+	"share modal ending":       "ارسلها الي صديق، شاركه الموقع الالكتروني، أو غردها. تعلم اكثر.",
+	"share modal introduction": "كل الفيديوهات المنشورة لديها  رابط سري مميز، يمكنك أن تشاركها.. هذه هو الرابط:",
+	"share modal title":        "شارك هذا المنشور",
+	"share":                    "شارك",
+	"unpin":                    "إلغاء الدبوس",
+}
