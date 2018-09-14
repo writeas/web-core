@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesTR = map[string]string{
+	"Anonymous post":                 "Anonim gönderi",
+	"Blogs":                          "Bloglar",
+	"Enter":                          "Gir",
+	"Newer":                          "Yeniler",
+	"Older":                          "Eskiler",
+	"Posts":                          "Gönderiler",
+	"Publish to...":                  "Yayınla...",
+	"Publish":                        "Yayınla",
+	"Read more...":                   "Devamını oku...",
+	"This blog requires a password.": "Bu blog parola korumalıdır.",
+	"Toggle theme":                   "Temayı göster",
+	"View posts":                     "Gönderilere Bak",
+	"delete":                         "sil",
+	"edit":                           "düzenle",
+	"move to...":                     "taşı",
+	"pin":                            "sabitle",
+	"published with write.as":  "write.as ile yayınlandı",
+	"share modal ending":       "Bir dosta gönder, internet üzerinden paylaş veya sadece tweetle. Daha fazla öğren.",
+	"share modal introduction": "Tüm yayınlanmış gönderilerin, onları paylaşmaya yarayan gizli, benzersiz bir bağlantısı vardır. Bağlantı:",
+	"share modal title":        "Bu gönderiyi paylaş",
+	"share":                    "paylaş",
+	"unpin":                    "sabitlemeyi kaldır",
+}
