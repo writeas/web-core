@@ -1,0 +1,26 @@
+package l10n
+
+var phrasesSK = map[string]string{
+	"Anonymous post":                 "Anonymný príspevok",
+	"Blogs":                          "Blogy",
+	"Enter":                          "Vstúp",
+	"Newer":                          "Novšie",
+	"Older":                          "Staršie",
+	"Posts":                          "Príspevky",
+	"Publish to...":                  "Publikuj do...",
+	"Publish":                        "Publikuj",
+	"Read more...":                   "Čítaj viac...",
+	"This blog requires a password.": "Tento blog vyžaduje heslo.",
+	"Toggle theme":                   "Zmeň motív",
+	"View posts":                     "Zobraz príspevky",
+	"delete":                         "vymaž",
+	"edit":                           "uprav",
+	"move to...":                     "presuň do...",
+	"pin":                            "pripni",
+	"published with write.as":  "publikované s write.as",
+	"share modal ending":       "Pošli ju kamarátovi, zdieľaj ju naprieč webom alebo ju tweetni. Dozvi sa viac.",
+	"share modal introduction": "Každý publikovaný príspevok má utajenú, jedinečnú adresu URL, ktorú môžeš s kýmkoľvek zdieľať. Toto je ona:",
+	"share modal title":        "Zdieľaj tento príspevok",
+	"share":                    "zdieľaj",
+	"unpin":                    "odopni",
+}
