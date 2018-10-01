@@ -4,4 +4,4 @@ notifications:
   email: false
 
 go:
-  - 1.4
+  - 1.10
