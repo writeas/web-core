@@ -80,3 +80,24 @@ func (v *NullJSONString) UnmarshalJSON(data []byte) error {
 	}
 	return nil
 }
+
+func ConvertJSONNullString(value string) reflect.Value {
+	v := NullJSONString{}
+	if err := v.Scan(value); err != nil {
+		return reflect.Value{}
+	}
+
+	return reflect.ValueOf(v)
+}
+
+func ConvertJSONNullBool(value string) reflect.Value {
+	v := NullJSONBool{}
+
+	if value == "on" || value == "off" {
+		return reflect.ValueOf(NullJSONBool{sql.NullBool{Bool: value == "on", Valid: true}})
+	}
+	if err := v.Scan(value); err != nil {
+		return reflect.Value{}
+	}
+	return reflect.ValueOf(v)
+}
