@@ -1,9 +1,12 @@
+// Package tags supports operations around hashtags in plain text content
 package tags
 
 import (
 	"github.com/kylemcc/twitter-text-go/extract"
 )
 
+// Extract finds all hashtags in the given string and returns a de-duplicated
+// list of them.
 func Extract(body string) []string {
 	matches := extract.ExtractHashtags(body)
 	tags := map[string]bool{}
