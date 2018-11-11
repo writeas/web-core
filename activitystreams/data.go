@@ -17,7 +17,7 @@ type (
 	}
 
 	Endpoints struct {
-		SharedInbox string `json:"sharedInbox"`
+		SharedInbox string `json:"sharedInbox,omitempty"`
 	}
 
 	Image struct {
