@@ -32,4 +32,5 @@ var phrases = map[string]string{
 	"share modal title":        "Share this post",
 	"share":                    "share",
 	"unpin":                    "unpin",
+	"title dash":               "&mdash;",
 }
