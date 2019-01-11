@@ -1,4 +1,4 @@
-// Package passgen generates random, unmemorable passwords.
+// Package passgen generates random passwords.
 //
 // Example usage:
 //
@@ -19,20 +19,20 @@ const DefLen = 20
 // DefChars is the default set of characters used in the password.
 var DefChars = []byte("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()- _=+,.?/:;{}[]`~")
 
-// New returns a random password of the default length with the default set of
-// characters.
+// New returns a random, unmemorable password of the default length with the
+// default set of characters.
 func New() string {
 	return NewLenChars(DefLen, DefChars)
 }
 
-// NewLen returns a random password of the given length with the default set
-// of characters.
+// NewLen returns a random, unmemorable password of the given length with the
+// default set of characters.
 func NewLen(length int) string {
 	return NewLenChars(length, DefChars)
 }
 
-// NewLenChars returns a random password of the given length with the given
-// set of characters.
+// NewLenChars returns a random, unmemorable password of the given length with
+// the given set of characters.
 func NewLenChars(length int, chars []byte) string {
 	if length == 0 {
 		return ""
