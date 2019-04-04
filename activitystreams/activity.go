@@ -11,6 +11,11 @@ const (
 	toPublic  = "https://www.w3.org/ns/activitystreams#Public"
 )
 
+var Extensions = map[string]string{
+	"sc":              "http://schema.org#",
+	"commentsEnabled": "sc:Boolean",
+}
+
 // Activity describes actions that have either already occurred, are in the
 // process of occurring, or may occur in the future.
 type Activity struct {
@@ -113,6 +118,9 @@ type Object struct {
 	Content      string            `json:"content"`
 	ContentMap   map[string]string `json:"contentMap,omitempty"`
 	Tag          []Tag             `json:"tag"`
+
+	// Extensions
+	CommentsEnabled bool `json:"commentsEnabled"`
 }
 
 // NewNoteObject creates a basic Note object that includes the public
