@@ -43,6 +43,7 @@ func NewCreateActivity(o *Object) *Activity {
 		BaseObject: BaseObject{
 			Context: []interface{}{
 				Namespace,
+				Extensions,
 			},
 			ID:   o.ID,
 			Type: "Create",
@@ -61,6 +62,7 @@ func NewUpdateActivity(o *Object) *Activity {
 		BaseObject: BaseObject{
 			Context: []interface{}{
 				Namespace,
+				Extensions,
 			},
 			ID:   o.ID,
 			Type: "Update",
