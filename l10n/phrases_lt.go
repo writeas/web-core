@@ -1,0 +1,27 @@
+package l10n
+
+var phrasesLT = map[string]string{
+	"Anonymous post":                 "Anoniminis įrašas",
+	"Blogs":                          "Tinklaraščiai",
+	"Enter":                          "Įvesti",
+	"Newer":                          "Naujesni",
+	"Older":                          "Senesni",
+	"Posts":                          "Įrašai",
+	"Publish to...":                  "Publikuoti į...",
+	"Publish":                        "Publikuoti",
+	"Read more...":                   "Skaityti daugiau...",
+	"This blog requires a password.": "Šis tinklaraštis reikalauja slaptažodžio.",
+	"Toggle theme":                   "Keisti temą",
+	"View posts":                     "Peržiūrėti įrašus",
+	"delete":                         "ištrinti",
+	"edit":                           "koreguoti",
+	"move to...":                     "perkelti į...",
+	"pin":                            "prisegti",
+	"published with write.as":  "publikuojama su write.as",
+	"share modal ending":       "Siųskite draugui, dalinkitės internete ar per Twitter. Sužinokite daugiau.",
+	"share modal introduction": "Kiekvienas publikuotas įrašas turi slaptą, unikalų URL kuriuo galite pasidalinti su bet kuo. Šis URL yra:",
+	"share modal title":        "Dalintis šiuo įrašu",
+	"share":                    "dalintis",
+	"unpin":                    "atsegti",
+	"title dash":               "&ndash;",
+}
