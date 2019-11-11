@@ -1,5 +1,5 @@
-Write.as web core
-=================
+WriteFreely web core
+====================
 [![GoDoc](https://godoc.org/github.com/writeas/web-core?status.svg)](https://godoc.org/github.com/writeas/web-core)
 [![Build Status](https://travis-ci.org/writeas/web-core.svg)](https://travis-ci.org/writeas/web-core)
 [![#writefreely on freenode](https://img.shields.io/badge/freenode-%23writefreely-blue.svg)](http://webchat.freenode.net/?channels=writefreely)
