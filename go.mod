@@ -9,7 +9,6 @@ require (
 	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/writeas/impart v1.1.0
-	github.com/writeas/nerds v1.0.0
 	github.com/writeas/openssl-go v1.0.0
 	github.com/writeas/saturday v1.6.0
 	golang.org/x/crypto v0.0.0-20190131182504-b8fe1690c613

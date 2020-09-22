@@ -13,8 +13,6 @@ github.com/shurcooL/sanitized_anchor_name v1.0.0 h1:PdmoCO6wvbs+7yrJyMORt4/BmY5I
 github.com/shurcooL/sanitized_anchor_name v1.0.0/go.mod h1:1NzhyTcUVG4SuEtjjoZeVRXNmyL/1OwPU0+IJeTBvfc=
 github.com/writeas/impart v1.1.0 h1:nPnoO211VscNkp/gnzir5UwCDEvdHThL5uELU60NFSE=
 github.com/writeas/impart v1.1.0/go.mod h1:g0MpxdnTOHHrl+Ca/2oMXUHJ0PcRAEWtkCzYCJUXC9Y=
-github.com/writeas/nerds v1.0.0 h1:ZzRcCN+Sr3MWID7o/x1cr1ZbLvdpej9Y1/Ho+JKlqxo=
-github.com/writeas/nerds v1.0.0/go.mod h1:Gn2bHy1EwRcpXeB7ZhVmuUwiweK0e+JllNf66gvNLdU=
 github.com/writeas/openssl-go v1.0.0 h1:YXM1tDXeYOlTyJjoMlYLQH1xOloUimSR1WMF8kjFc5o=
 github.com/writeas/openssl-go v1.0.0/go.mod h1:WsKeK5jYl0B5y8ggOmtVjbmb+3rEGqSD25TppjJnETA=
 github.com/writeas/saturday v1.6.0 h1:HNUtX8TVJJnSdxE8vaAgtHiAJVt+Of5AJYlm62pmVlI=
