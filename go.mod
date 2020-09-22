@@ -3,10 +3,10 @@ module github.com/writeas/web-core
 go 1.10
 
 require (
+	github.com/gofrs/uuid v3.3.0+incompatible
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/kylemcc/twitter-text-go v0.0.0-20180726194232-7f582f6736ec
 	github.com/microcosm-cc/bluemonday v1.0.2
-	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/writeas/impart v1.1.0
 	github.com/writeas/nerds v1.0.0
