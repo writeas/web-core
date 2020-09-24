@@ -1,7 +1,7 @@
 package auth
 
 import (
-	uuid "github.com/nu7hatch/gouuid"
+	uuid "github.com/gofrs/uuid"
 	"github.com/writeas/web-core/log"
 	"strings"
 )
@@ -16,7 +16,7 @@ func GetToken(header string) []byte {
 			token = f[1]
 		}
 	}
-	t, err := uuid.ParseHex(token)
+	t, err := uuid.FromString(token)
 	if err != nil {
 		log.Error("Couldn't parseHex on '%s': %v", accessToken, err)
 	} else {
@@ -31,7 +31,7 @@ func GetHeaderToken(header string) []byte {
 	if len(header) > 0 {
 		f := strings.Fields(header)
 		if len(f) == 2 && f[0] == "Token" {
-			t, err := uuid.ParseHex(f[1])
+			t, err := uuid.FromString(f[1])
 			if err != nil {
 				log.Error("Couldn't parseHex on '%s': %v", accessToken, err)
 			} else {
