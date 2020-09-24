@@ -9,7 +9,6 @@ require (
 	github.com/microcosm-cc/bluemonday v1.0.2
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/writeas/impart v1.1.0
-	github.com/writeas/nerds v1.0.0
 	github.com/writeas/openssl-go v1.0.0
 	github.com/writeas/saturday v1.6.0
 	golang.org/x/crypto v0.0.0-20190131182504-b8fe1690c613
