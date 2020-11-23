@@ -67,3 +67,12 @@ func (memo *Memo) Get() (value interface{}, err error) {
 	}
 	return memo.cache.res.value, memo.cache.res.err
 }
+
+// Reset forcibly resets the cache to nil.
+func (memo *Memo) Reset() {
+	defer memo.mu.Unlock()
+	memo.mu.Lock()
+
+	memo.cache = nil
+	memo.lastCache = time.Now()
+}
