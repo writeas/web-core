@@ -117,6 +117,7 @@ type Object struct {
 	Content      string            `json:"content"`
 	ContentMap   map[string]string `json:"contentMap,omitempty"`
 	Tag          []Tag             `json:"tag"`
+	Attachment   []Attachment      `json:"attachment,omitempty"`
 
 	// Extensions
 	// NOTE: add extensions here
