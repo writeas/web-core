@@ -10,5 +10,5 @@ type TagType string
 
 const (
 	TagHashtag TagType = "Hashtag"
-	TagMention         = "Mention"
+	TagMention TagType = "Mention"
 )
