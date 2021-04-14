@@ -3,6 +3,7 @@ package posts
 import (
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/writeas/saturday"
+	"html"
 	"regexp"
 	"strings"
 	"unicode"
@@ -60,4 +61,10 @@ func ApplyBasicMarkdown(data []byte) string {
 	outHTML = strings.TrimRightFunc(outHTML, unicode.IsSpace)
 
 	return outHTML
+}
+
+// StripHTMLWithoutEscaping strips HTML tags with bluemonday's StrictPolicy, then unescapes the HTML
+// entities added in by sanitizing the content.
+func StripHTMLWithoutEscaping(content string) string {
+	return html.UnescapeString(bluemonday.StrictPolicy().Sanitize(content))
 }
