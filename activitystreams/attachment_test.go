@@ -38,3 +38,27 @@ func TestNewImageAttachment(t *testing.T) {
 		})
 	}
 }
+
+func TestNewDocumentAttachment(t *testing.T) {
+	type args struct {
+		url string
+	}
+	tests := []struct {
+		name string
+		args args
+		want Attachment
+	}{
+		{name: "mp3", args: args{"https://listen.as/matt/abc.mp3"}, want: Attachment{
+			Type:      "Document",
+			URL:       "https://listen.as/matt/abc.mp3",
+			MediaType: "audio/mpeg",
+		}},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := NewDocumentAttachment(tt.args.url); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("NewDocumentAttachment() = %+v, want %+v", got, tt.want)
+			}
+		})
+	}
+}
