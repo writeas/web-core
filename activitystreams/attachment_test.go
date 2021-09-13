@@ -12,19 +12,19 @@ func TestNewImageAttachment(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want *Attachment
+		want Attachment
 	}{
-		{name: "good svg", args: args{"https://writefreely.org/img/writefreely.svg"}, want: &Attachment{
+		{name: "good svg", args: args{"https://writefreely.org/img/writefreely.svg"}, want: Attachment{
 			Type:      "Image",
 			URL:       "https://writefreely.org/img/writefreely.svg",
 			MediaType: "image/svg+xml",
 		}},
-		{name: "good png", args: args{"https://i.snap.as/12345678.png"}, want: &Attachment{
+		{name: "good png", args: args{"https://i.snap.as/12345678.png"}, want: Attachment{
 			Type:      "Image",
 			URL:       "https://i.snap.as/12345678.png",
 			MediaType: "image/png",
 		}},
-		{name: "no extension", args: args{"https://i.snap.as/12345678"}, want: &Attachment{
+		{name: "no extension", args: args{"https://i.snap.as/12345678"}, want: Attachment{
 			Type:      "Image",
 			URL:       "https://i.snap.as/12345678",
 			MediaType: "",
