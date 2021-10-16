@@ -24,3 +24,24 @@ func titleFromHashtag(hashtag string) string {
 	}
 	return t.String()
 }
+
+// HashtagFromTitle generates a valid single-word, camelCase hashtag from a title (which might include spaces,
+// punctuation, etc.).
+func HashtagFromTitle(title string) string {
+	var t strings.Builder
+	var prev rune
+	for _, c := range title {
+		if !unicode.IsLetter(c) && !unicode.IsNumber(c) {
+			prev = c
+			continue
+		}
+		if unicode.IsSpace(prev) {
+			// Uppercase next word
+			t.WriteRune(unicode.ToUpper(c))
+		} else {
+			t.WriteRune(c)
+		}
+		prev = c
+	}
+	return t.String()
+}

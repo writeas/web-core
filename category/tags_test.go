@@ -29,3 +29,32 @@ func TestTitleFromHashtag(t *testing.T) {
 		})
 	}
 }
+
+func TestHashtagFromTitle(t *testing.T) {
+	tests := []struct {
+		name       string
+		title      string
+		expHashtag string
+	}{
+		{"proper noun", "Jane", "Jane"},
+		{"full name", "Jane Doe", "JaneDoe"},
+		{"us upper words", "United States", "UnitedStates"},
+		{"us lower words", "united states", "unitedStates"},
+		{"usa", "USA", "USA"},
+		{"100dto", "100 Days To Offload", "100DaysToOffload"},
+		{"iphone", "iPhone", "iPhone"},
+		{"ilike", "I like this", "ILikeThis"},
+		{"abird", "a Bird", "aBird"},
+		{"all caps", "URGENT", "URGENT"},
+		{"punctuation", "John’s Stories", "JohnsStories"},
+		{"smartphone", "スマートフォン", "スマートフォン"},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			res := HashtagFromTitle(test.title)
+			if res != test.expHashtag {
+				t.Fatalf("%s: got '%s' expected '%s'", test.title, res, test.expHashtag)
+			}
+		})
+	}
+}
