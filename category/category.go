@@ -28,3 +28,24 @@ func NewCategory(hashtag string) *Category {
 		Title:   title,
 	}
 }
+
+// NewCategoryFromPartial creates a Category from a partially-populated Category, such as when a user initially creates
+// one.
+func NewCategoryFromPartial(cat *Category) *Category {
+	newCat := &Category{
+		Hashtag: cat.Hashtag,
+	}
+	// Create title from hashtag, if none supplied
+	if cat.Title == "" {
+		newCat.Title = titleFromHashtag(cat.Hashtag)
+	} else {
+		newCat.Title = cat.Title
+	}
+	// Create slug from title, if none supplied; otherwise ensure slug is valid
+	if cat.Slug == "" {
+		newCat.Slug = slug.Make(newCat.Title)
+	} else {
+		newCat.Slug = slug.Make(cat.Slug)
+	}
+	return newCat
+}
