@@ -5,7 +5,7 @@ go 1.10
 require (
 	github.com/gofrs/uuid v3.3.0+incompatible
 	github.com/kylemcc/twitter-text-go v0.0.0-20180726194232-7f582f6736ec
-	github.com/microcosm-cc/bluemonday v1.0.5
+	github.com/microcosm-cc/bluemonday v1.0.16
 	github.com/rainycape/unidecode v0.0.0-20150907023854-cb7f23ec59be // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/writeas/go-strip-markdown v2.0.1+incompatible
