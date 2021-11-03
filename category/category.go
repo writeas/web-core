@@ -12,10 +12,11 @@ var (
 
 // Category represents a post tag with additional metadata, like a title and slug.
 type Category struct {
-	ID      int64  `json:"-"`
-	Hashtag string `json:"hashtag"`
-	Slug    string `json:"slug"`
-	Title   string `json:"title"`
+	ID        int64  `json:"-"`
+	Hashtag   string `json:"hashtag"`
+	Slug      string `json:"slug"`
+	Title     string `json:"title"`
+	PostCount int64  `json:"post_count"`
 }
 
 // NewCategory creates a Category you can insert into the database, based on a hashtag. It automatically breaks up the
