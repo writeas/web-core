@@ -8,6 +8,8 @@ func Strings(lang string) map[string]string {
 		return phrasesAR
 	case "cs":
 		return phrasesCS
+	case "da":
+		return phrasesDA
 	case "de":
 		return phrasesDE
 	case "el":

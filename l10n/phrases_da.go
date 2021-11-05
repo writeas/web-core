@@ -1,0 +1,28 @@
+package l10n
+
+var phrasesDA = map[string]string{
+	"Anonymous post":                 "Anonymt indlæg",
+	"Blogs":                          "Blogs",
+	"Enter":                          "Enter",
+	"Newer":                          "Nyere",
+	"Older":                          "Ældre",
+	"Posts":                          "Indlæg",
+	"Publish to...":                  "Udgiv på...",
+	"Publish":                        "Udgiv",
+	"Read more...":                   "Læs videre...",
+	"Subscribe":                      "Abonnér",
+	"This blog requires a password.": "Den her blog kræver en adgangskode.",
+	"Toggle theme":                   "Skift design",
+	"View posts":                     "Vis indlæg",
+	"delete":                         "slet",
+	"edit":                           "redigér",
+	"email subscription prompt":      "Indtast din email for at få tilsendt opdateringer.",
+	"move to...":                     "flyt til...",
+	"pin":                            "sæt øverst",
+	"published with write.as":        "udgivet med write.as",
+	"share modal ending":             "Send det til en ven, del det på nettet, eller lav et tweet. Læs mere.",
+	"share modal introduction":       "Hvert indlæg har sit eget, hemmelige link, som du kan dele med enhver. Her er det førnævnte link:",
+	"share modal title":              "Del indlæg",
+	"share":                          "del",
+	"unpin":                          "fjern øverst",
+}
