@@ -1,0 +1,28 @@
+package l10n
+
+var phrasesHE = map[string]string{
+	"Anonymous post":                 "פוסטים אנונימיים",
+	"Blogs":                          "בלוגים",
+	"Enter":                          "היכנס",
+	"Newer":                          "חדש יותר",
+	"Older":                          "ישן יותר",
+	"Posts":                          "פוסטים",
+	"Publish to...":                  "פירסום ל...",
+	"Publish":                        "פירסום",
+	"Read more...":                   "קרא עוד...",
+	"Subscribe":                      "הירשם",
+	"This blog requires a password.": "לבלוג זה ישנה סיסמה",
+	"Toggle theme":                   "החלפת ערכת נושא",
+	"View posts":                     "צפייה בפוסטים",
+	"delete":                         "מחיקה",
+	"edit":                           "עריכה",
+	"email subscription prompt":      "הכנס את המייל שלך כדי לקבל לעידכונים",
+	"move to...":                     "העברה ל...",
+	"pin":                            "הצמדה",
+	"published with write.as":        "פורסם ע''י write.as",
+	"share modal ending":             "שלח לחברים, פרסם ברשת, או אולי צייץ את זה. למד עוד.",
+	"share modal introduction":       "לכל פוסט יש קישור סודי ויחודי שניתן לשתף עם כל אחד. הנה הקישור:",
+	"share modal title":              "שיתוף פוסט זה",
+	"share":                          "שיתוף",
+	"unpin":                          "ביטול הצמדה",
+}
