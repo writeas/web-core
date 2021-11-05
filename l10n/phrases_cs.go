@@ -1,0 +1,28 @@
+package l10n
+
+var phrasesCS = map[string]string{
+	"Anonymous post":                 "Anonymní článek",
+	"Blogs":                          "Blogy",
+	"Enter":                          "Vstoupit",
+	"Newer":                          "Novější",
+	"Older":                          "Starší",
+	"Posts":                          "Články",
+	"Publish to...":                  "Zveřejnit do...",
+	"Publish":                        "Zveřejnit",
+	"Read more...":                   "Číst dále...",
+	"Subscribe":                      "Odebírat",
+	"This blog requires a password.": "Tento blog je zaheslován.",
+	"Toggle theme":                   "Přepnout vzhled",
+	"View posts":                     "Zobrazit články",
+	"delete":                         "smazat",
+	"edit":                           "upravit",
+	"email subscription prompt":      "Zadejte svůj e-mail a přihlaste se k odběru aktualizací.",
+	"move to...":                     "přesunout do...",
+	"pin":                            "připnout",
+	"published with write.as":        "publikováno pomocí write.as",
+	"share modal ending":             "Pošlete ji kamarádům, sdílejte na webu nebo na sociálních sítích. Zjistit více.",
+	"share modal introduction":       "Každý zveřejněný článek má tajnou unikátní adresu, kterou můžete komukoliv poslat. Unikátní adresa pro tento článek je:",
+	"share modal title":              "Sdílet tento článek",
+	"share":                          "sdílet",
+	"unpin":                          "odepnout",
+}
