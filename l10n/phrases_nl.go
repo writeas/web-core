@@ -1,0 +1,28 @@
+package l10n
+
+var phrasesNL = map[string]string{
+	"Anonymous post":                 "Anoniem artikel",
+	"Blogs":                          "Blogs",
+	"Enter":                          "Invoeren",
+	"Newer":                          "Nieuwer",
+	"Older":                          "Ouder",
+	"Posts":                          "Artikelen",
+	"Publish to...":                  "Publiceren op...",
+	"Publish":                        "Publiceren",
+	"Read more...":                   "Lees verder...",
+	"Subscribe":                      "Abonneren",
+	"This blog requires a password.": "Voor dit blog is een wachtwoord vereist.",
+	"Toggle theme":                   "Ander thema",
+	"View posts":                     "Artikelen bekijken",
+	"delete":                         "verwijderen",
+	"edit":                           "bewerken",
+	"email subscription prompt":      "Voer je e-mailadres in om te abonneren op updates.",
+	"move to...":                     "verplaatsen naar...",
+	"pin":                            "vastmaken",
+	"published with write.as":        "gepubliceerd met write.as",
+	"share modal ending":             "Deel de link met een vriend, op het internet of op Twitter. Meer informatie.",
+	"share modal introduction":       "Elk gepubliceerd artikel bevat een geheime, unieke link die je met iedereen kunt delen. Dit is de link:",
+	"share modal title":              "Deel dit artikel",
+	"share":                          "delen",
+	"unpin":                          "losmaken",
+}

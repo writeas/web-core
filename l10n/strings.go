@@ -32,6 +32,8 @@ func Strings(lang string) map[string]string {
 		return phrasesLT
 	case "mk":
 		return phrasesMK
+	case "nl":
+		return phrasesNL
 	case "pl":
 		return phrasesPL
 	case "pt":
