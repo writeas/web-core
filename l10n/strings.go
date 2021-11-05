@@ -24,6 +24,8 @@ func Strings(lang string) map[string]string {
 		return phrasesFA
 	case "fr":
 		return phrasesFR
+	case "gl":
+		return phrasesGL
 	case "hu":
 		return phrasesHU
 	case "it":

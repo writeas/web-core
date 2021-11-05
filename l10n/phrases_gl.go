@@ -1,0 +1,28 @@
+package l10n
+
+var phrasesGL = map[string]string{
+	"Anonymous post":                 "Publicación anónima",
+	"Blogs":                          "Blogs",
+	"Enter":                          "Entrar",
+	"Newer":                          "Máis recente",
+	"Older":                          "Máis antigo",
+	"Posts":                          "Publicacións",
+	"Publish to...":                  "Publicar en...",
+	"Publish":                        "Publicar",
+	"Read more...":                   "Saber máis...",
+	"Subscribe":                      "Subscribir",
+	"This blog requires a password.": "Este blog require un contrasinal.",
+	"Toggle theme":                   "Cambiar decorado",
+	"View posts":                     "Ver Publicacións",
+	"delete":                         "eliminar",
+	"edit":                           "editar",
+	"email subscription prompt":      "Escribe o teu email para recibir actualizacións.",
+	"move to...":                     "mover a...",
+	"pin":                            "fixar",
+	"published with write.as":        "publicado con write.as",
+	"share modal ending":             "Envíallo a un amigo, compárteo en internet e redes sociais. Saber máis.",
+	"share modal introduction":       "Cada publicación ten un identificador, un URL único que podes compartir con calquera. Este é o URL:",
+	"share modal title":              "Comparte a publicación",
+	"share":                          "compartir",
+	"unpin":                          "desafixar",
+}
