@@ -64,7 +64,7 @@ func ApplyBasicMarkdown(data []byte) string {
 }
 
 // ApplyBasicAccessibleMarkdown applies Markdown to the given data, rendering basic text formatting and preserving hard
-// line breaks. It is meant for formatting text in small, multi-line UI elements, like user profile biographies.
+// line breaks in HTML. It is meant for formatting text in small, multi-line UI elements, like user profile biographies.
 func ApplyBasicAccessibleMarkdown(data []byte) string {
 	mdExtensions := 0 |
 		blackfriday.EXTENSION_STRIKETHROUGH |
@@ -72,8 +72,8 @@ func ApplyBasicAccessibleMarkdown(data []byte) string {
 		blackfriday.EXTENSION_HEADER_IDS |
 		blackfriday.EXTENSION_HARD_LINE_BREAK
 	htmlFlags := 0 |
-		blackfriday.HTML_SKIP_HTML |
 		blackfriday.HTML_USE_SMARTYPANTS |
+		blackfriday.HTML_USE_XHTML |
 		blackfriday.HTML_SMARTYPANTS_DASHES
 
 	// Generate Markdown
@@ -81,7 +81,10 @@ func ApplyBasicAccessibleMarkdown(data []byte) string {
 	// Strip out bad HTML
 	policy := bluemonday.UGCPolicy()
 	policy.AllowAttrs("class", "id").Globally()
+	policy.AllowAttrs("rel").OnElements("a")
+	policy.RequireNoFollowOnLinks(false)
 	outHTML := string(policy.SanitizeBytes(md))
+	// Strip surrounding <p> tags that blackfriday adds
 	outHTML = markeddownReg.ReplaceAllString(outHTML, "$1")
 	outHTML = strings.TrimRightFunc(outHTML, unicode.IsSpace)
 
