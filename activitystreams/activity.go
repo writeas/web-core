@@ -106,18 +106,28 @@ func NewFollowActivity(actorIRI, followeeIRI string) *FollowActivity {
 // Object is the primary base type for the Activity Streams vocabulary.
 type Object struct {
 	BaseObject
-	Published    time.Time         `json:"published"`
+	Published    time.Time         `json:"published,omitempty"`
 	Summary      *string           `json:"summary,omitempty"`
-	InReplyTo    *string           `json:"inReplyTo"`
+	InReplyTo    *string           `json:"inReplyTo,omitempty"`
 	URL          string            `json:"url"`
-	AttributedTo string            `json:"attributedTo"`
-	To           []string          `json:"to"`
+	AttributedTo string            `json:"attributedTo,omitempty"`
+	To           []string          `json:"to,omitempty"`
 	CC           []string          `json:"cc,omitempty"`
 	Name         string            `json:"name,omitempty"`
-	Content      string            `json:"content"`
+	Content      string            `json:"content,omitempty"`
 	ContentMap   map[string]string `json:"contentMap,omitempty"`
-	Tag          []Tag             `json:"tag"`
+	Tag          []Tag             `json:"tag,omitempty"`
 	Attachment   []Attachment      `json:"attachment,omitempty"`
+
+	// Person
+	Inbox             string     `json:"inbox,omitempty"`
+	Outbox            string     `json:"outbox,omitempty"`
+	Following         string     `json:"following,omitempty"`
+	Followers         string     `json:"followers,omitempty"`
+	PreferredUsername string     `json:"preferredUsername,omitempty"`
+	Icon              *Image     `json:"icon,omitempty"`
+	PublicKey         *PublicKey `json:"publicKey,omitempty"`
+	Endpoints         *Endpoints `json:"endpoints,omitempty"`
 
 	// Extensions
 	// NOTE: add extensions here
@@ -146,6 +156,16 @@ func NewArticleObject() *Object {
 		},
 		To: []string{
 			toPublic,
+		},
+	}
+	return &o
+}
+
+// NewPersonObject creates a basic Person object.
+func NewPersonObject() *Object {
+	o := Object{
+		BaseObject: BaseObject{
+			Type: "Person",
 		},
 	}
 	return &o
