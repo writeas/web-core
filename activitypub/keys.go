@@ -69,8 +69,8 @@ func parsePublicKey(der []byte) (crypto.PublicKey, error) {
 // them in that order.
 func DecodePrivateKey(k []byte) (crypto.PrivateKey, error) {
 	block, _ := pem.Decode(k)
-	if block == nil || block.Type != "RSA PRIVATE KEY" {
-		return nil, fmt.Errorf("failed to decode PEM block containing private key")
+	if block == nil || (block.Type != "RSA PRIVATE KEY" && block.Type != "PRIVATE KEY") {
+		return nil, fmt.Errorf("failed to decode PEM block containing private key, type %s", block.Type)
 	}
 
 	return parsePrivateKey(block.Bytes)
