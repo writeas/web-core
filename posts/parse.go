@@ -76,12 +76,13 @@ func FriendlyPostTitle(content, friendlyId string) string {
 // choosing what to generate. In case a post has a title, this function will
 // fail, and logic should instead be implemented to skip this when there's no
 // title, like so:
-//    var desc string
-//    if title == "" {
-//        desc = PostDescription(content, title, friendlyId)
-//    } else {
-//        desc = ShortPostDescription(content)
-//    }
+//
+//	var desc string
+//	if title == "" {
+//	    desc = PostDescription(content, title, friendlyId)
+//	} else {
+//	    desc = ShortPostDescription(content)
+//	}
 func PostDescription(content, title, friendlyId string) string {
 	maxLen := 140
 
