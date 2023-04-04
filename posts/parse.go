@@ -2,7 +2,8 @@ package posts
 
 import (
 	"fmt"
-	stripmd "github.com/writeas/go-strip-markdown"
+	stripmd "github.com/writeas/go-strip-markdown/v2"
+	"github.com/writeas/slug"
 	"github.com/writeas/web-core/stringmanip"
 	"regexp"
 	"strings"
@@ -35,6 +36,20 @@ func ExtractTitle(content string) (title string, body string) {
 	}
 	body = content
 	return
+}
+
+func PostTitle(content, friendlyId string) string {
+	content = StripHTMLWithoutEscaping(content)
+
+	content = strings.TrimLeftFunc(stripmd.Strip(content), unicode.IsSpace)
+	eol := strings.IndexRune(content, '\n')
+	blankLine := strings.Index(content, "\n\n")
+	if blankLine != -1 && blankLine <= eol && blankLine <= assumedTitleLen {
+		return strings.TrimSpace(content[:blankLine])
+	} else if utf8.RuneCountInString(content) <= maxTitleLen {
+		return content
+	}
+	return friendlyId
 }
 
 func FriendlyPostTitle(content, friendlyId string) string {
@@ -162,4 +177,33 @@ func PostLede(t string, includePunc bool) string {
 	}
 
 	return t
+}
+
+func GetSlug(title, lang string) string {
+	return GetSlugFromPost("", title, lang)
+}
+
+func GetSlugFromPost(title, body, lang string) string {
+	if title == "" {
+		// Remove Markdown, so e.g. link URLs and image alt text don't make it into the slug
+		body = strings.TrimSpace(stripmd.StripOptions(body, stripmd.Options{SkipImages: true}))
+		title = PostTitle(body, body)
+	}
+	title = PostLede(title, false)
+	// Truncate lede if needed
+	title, _ = TruncToWord(title, maxTitleLen)
+	var s string
+	if lang != "" && len(lang) == 2 {
+		s = slug.MakeLang(title, lang)
+	} else {
+		s = slug.Make(title)
+	}
+
+	// Transliteration may cause the slug to expand past the limit, so truncate again
+	s, _ = TruncToWord(s, maxTitleLen)
+	return strings.TrimFunc(s, func(r rune) bool {
+		// TruncToWord doesn't respect words in a slug, since spaces are replaced
+		// with hyphens. So remove any trailing hyphens.
+		return r == '-'
+	})
 }

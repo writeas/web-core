@@ -8,7 +8,7 @@ require (
 	github.com/microcosm-cc/bluemonday v1.0.5
 	github.com/rainycape/unidecode v0.0.0-20150907023854-cb7f23ec59be // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
-	github.com/writeas/go-strip-markdown v2.0.1+incompatible
+	github.com/writeas/go-strip-markdown/v2 v2.1.1
 	github.com/writeas/impart v1.1.1
 	github.com/writeas/openssl-go v1.0.0
 	github.com/writeas/saturday v1.7.1
