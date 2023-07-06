@@ -4,7 +4,7 @@ import "testing"
 
 func TestIsBot(t *testing.T) {
 	tests := map[string]bool{
-		"Twitterbot/1.0":                                                                            true,
+		"Twitterbot/1.0": true,
 		"http.rb/2.2.2 (Mastodon/1.6.0; +https://insolente.im/)":                                    true,
 		"http.rb/2.2.2 (Mastodon/1.5.1; +https://mastodon.cloud/)":                                  true,
 		"http.rb/2.2.2 (Mastodon/1.6.0rc5; +https://mastodon.sdf.org/)":                             true,
@@ -13,6 +13,8 @@ func TestIsBot(t *testing.T) {
 		"Mozilla/5.0 (compatible; Applebot/0.3; +http://www.apple.com/go/applebot)":                 true,
 		"Mozilla/5.0 (compatible; archive.org_bot +http://www.archive.org/details/archive.org_bot)": true,
 		"Mozilla/5.0 (compatible; AhrefsBot/5.2; +http://ahrefs.com/robot/)":                        true,
+
+		"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)": true,
 	}
 
 	for ua, r := range tests {
