@@ -422,6 +422,7 @@ var botPrefixes = []string{
 var botPhrases = []string{
 	"bingbot",
 	"Googlebot",
+	"archive.org_bot",
 }
 
 // IsBot returns whether or not the provided User-Agent string is a known bot
