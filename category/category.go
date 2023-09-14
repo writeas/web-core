@@ -17,6 +17,11 @@ type Category struct {
 	Slug      string `json:"slug"`
 	Title     string `json:"title"`
 	PostCount int64  `json:"post_count"`
+
+	// IsCategory distinguishes this Category from a mere tag. If true, it is often prominently featured on a blog,
+	// and looked up via its Slug instead of its Hashtag. It usually has all metadata, such as Title, correctly
+	// populated.
+	IsCategory bool `json:"-"`
 }
 
 // NewCategory creates a Category you can insert into the database, based on a hashtag. It automatically breaks up the
