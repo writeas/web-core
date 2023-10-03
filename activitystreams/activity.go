@@ -17,12 +17,12 @@ var Extensions = map[string]string{}
 // process of occurring, or may occur in the future.
 type Activity struct {
 	BaseObject
-	Actor     string    `json:"actor"`
-	Published time.Time `json:"published,omitempty"`
-	Updated   time.Time `json:"updated,omitempty"`
-	To        []string  `json:"to,omitempty"`
-	CC        []string  `json:"cc,omitempty"`
-	Object    *Object   `json:"object"`
+	Actor     string     `json:"actor"`
+	Published time.Time  `json:"published,omitempty"`
+	Updated   *time.Time `json:"updated,omitempty"`
+	To        []string   `json:"to,omitempty"`
+	CC        []string   `json:"cc,omitempty"`
+	Object    *Object    `json:"object"`
 }
 
 type FollowActivity struct {
@@ -68,7 +68,9 @@ func NewUpdateActivity(o *Object) *Activity {
 		Actor:     o.AttributedTo,
 		Object:    o,
 		Published: o.Published,
-		Updated:   o.Updated,
+	}
+	if o.Updated != nil && !o.Updated.IsZero() {
+		a.Updated = o.Updated
 	}
 	return &a
 }
@@ -109,7 +111,7 @@ func NewFollowActivity(actorIRI, followeeIRI string) *FollowActivity {
 type Object struct {
 	BaseObject
 	Published    time.Time         `json:"published,omitempty"`
-	Updated      time.Time         `json:"updated,omitempty"`
+	Updated      *time.Time        `json:"updated,omitempty"`
 	Summary      *string           `json:"summary,omitempty"`
 	InReplyTo    *string           `json:"inReplyTo,omitempty"`
 	URL          string            `json:"url"`
