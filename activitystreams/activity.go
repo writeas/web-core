@@ -8,7 +8,7 @@ import (
 
 const (
 	Namespace = "https://www.w3.org/ns/activitystreams"
-	toPublic  = "https://www.w3.org/ns/activitystreams#Public"
+	ToPublic  = "https://www.w3.org/ns/activitystreams#Public"
 )
 
 var Extensions = map[string]string{}
@@ -146,7 +146,7 @@ func NewNoteObject() *Object {
 			Type: "Note",
 		},
 		To: []string{
-			toPublic,
+			ToPublic,
 		},
 	}
 	return &o
@@ -160,7 +160,7 @@ func NewArticleObject() *Object {
 			Type: "Article",
 		},
 		To: []string{
-			toPublic,
+			ToPublic,
 		},
 	}
 	return &o
