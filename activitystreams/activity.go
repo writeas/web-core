@@ -123,6 +123,7 @@ type Object struct {
 	ContentMap   map[string]string `json:"contentMap,omitempty"`
 	Tag          []Tag             `json:"tag,omitempty"`
 	Attachment   []Attachment      `json:"attachment,omitempty"`
+	Preview      *Object           `json:"preview,omitempty"`
 
 	// Person
 	Inbox             string     `json:"inbox,omitempty"`
