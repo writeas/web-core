@@ -13,6 +13,9 @@ type Person struct {
 	Summary           string    `json:"summary"`
 	PublicKey         PublicKey `json:"publicKey"`
 	Endpoints         Endpoints `json:"endpoints"`
+
+	// Extensions
+	Monetization string `json:"monetization,omitempty"`
 }
 
 func NewPerson(accountRoot string) *Person {
@@ -48,4 +51,9 @@ func (p *Person) SetPrivKey(k []byte) {
 
 func (p *Person) GetPrivKey() []byte {
 	return p.PublicKey.privateKey
+}
+
+func (p *Person) AddWebMonetization(wallet string) {
+	p.Context = append(p.Context, apMonetizationContext)
+	p.Monetization = wallet
 }

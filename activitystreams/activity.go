@@ -11,7 +11,13 @@ const (
 	toPublic  = "https://www.w3.org/ns/activitystreams#Public"
 )
 
-var Extensions = map[string]string{}
+var (
+	Extensions = map[string]string{}
+
+	apMonetizationContext = map[string]interface{}{
+		"monetization": "https://interledger.org/ns#monetization",
+	}
+)
 
 // Activity describes actions that have either already occurred, are in the
 // process of occurring, or may occur in the future.
