@@ -11,7 +11,13 @@ const (
 	ToPublic  = "https://www.w3.org/ns/activitystreams#Public"
 )
 
-var Extensions = map[string]string{}
+var (
+	Extensions = map[string]string{}
+
+	apMonetizationContext = map[string]interface{}{
+		"monetization": "https://interledger.org/ns#monetization",
+	}
+)
 
 // Activity describes actions that have either already occurred, are in the
 // process of occurring, or may occur in the future.
@@ -123,6 +129,7 @@ type Object struct {
 	ContentMap   map[string]string `json:"contentMap,omitempty"`
 	Tag          []Tag             `json:"tag,omitempty"`
 	Attachment   []Attachment      `json:"attachment,omitempty"`
+	Preview      *Object           `json:"preview,omitempty"`
 
 	// Person
 	Inbox             string     `json:"inbox,omitempty"`
