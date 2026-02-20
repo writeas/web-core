@@ -142,7 +142,7 @@ type Object struct {
 	Endpoints         *Endpoints `json:"endpoints,omitempty"`
 
 	// Extensions
-	// NOTE: add extensions here
+	Monetization string `json:"monetization,omitempty"`
 }
 
 // NewNoteObject creates a basic Note object that includes the public
@@ -181,4 +181,9 @@ func NewPersonObject() *Object {
 		},
 	}
 	return &o
+}
+
+func (o *Object) AddWebMonetization(wallet string) {
+	o.Context = append(o.Context, apMonetizationContext)
+	o.Monetization = wallet
 }
