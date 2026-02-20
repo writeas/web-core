@@ -149,6 +149,9 @@ func NewNoteObject() *Object {
 	o := Object{
 		BaseObject: BaseObject{
 			Type: "Note",
+			Context: []interface{}{
+				Namespace,
+			},
 		},
 		To: []string{
 			ToPublic,
