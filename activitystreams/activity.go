@@ -14,9 +14,7 @@ const (
 var (
 	Extensions = map[string]string{}
 
-	apMonetizationContext = map[string]interface{}{
-		"monetization": "https://interledger.org/ns#monetization",
-	}
+	apMonetizationContext = "https://webmonetization.org/ns.jsonld"
 )
 
 // Activity describes actions that have either already occurred, are in the
