@@ -165,6 +165,9 @@ func NewArticleObject() *Object {
 	o := Object{
 		BaseObject: BaseObject{
 			Type: "Article",
+			Context: []interface{}{
+				Namespace,
+			},
 		},
 		To: []string{
 			ToPublic,
@@ -178,6 +181,9 @@ func NewPersonObject() *Object {
 	o := Object{
 		BaseObject: BaseObject{
 			Type: "Person",
+			Context: []interface{}{
+				Namespace,
+			},
 		},
 	}
 	return &o
