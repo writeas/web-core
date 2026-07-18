@@ -30,7 +30,7 @@ type (
 type OrderedCollection struct {
 	BaseObject
 	TotalItems int    `json:"totalItems"`
-	First      string `json:"first"`
+	First      string `json:"first,omitempty"`
 	Last       string `json:"last,omitempty"`
 }
 
@@ -43,8 +43,12 @@ func NewOrderedCollection(accountRoot, collType string, items int) *OrderedColle
 			ID:   accountRoot + "/" + collType,
 			Type: "OrderedCollection",
 		},
-		First:      accountRoot + "/" + collType + "?page=1",
 		TotalItems: items,
+	}
+	if items > 0 {
+		// Next page should only be indicated if there are potentially items on it. NOTE: with no knowledge of items-
+		// per-page, this still may need to be altered by the func caller.
+		oc.First = accountRoot + "/" + collType + "?page=1"
 	}
 	return &oc
 }
