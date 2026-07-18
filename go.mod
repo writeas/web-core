@@ -1,6 +1,6 @@
 module github.com/writeas/web-core
 
-go 1.24.0
+go 1.25.0
 
 require (
 	github.com/gofrs/uuid v3.3.0+incompatible
@@ -11,7 +11,7 @@ require (
 	github.com/writeas/openssl-go v1.0.0
 	github.com/writeas/saturday v1.7.1
 	github.com/writeas/slug v1.2.0
-	golang.org/x/crypto v0.45.0
+	golang.org/x/crypto v0.52.0
 )
 
 require (
@@ -19,6 +19,6 @@ require (
 	github.com/gorilla/css v1.0.0 // indirect
 	github.com/rainycape/unidecode v0.0.0-20150907023854-cb7f23ec59be // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
-	golang.org/x/net v0.47.0 // indirect
+	golang.org/x/net v0.54.0 // indirect
 	gopkg.in/yaml.v1 v1.0.0-20140924161607-9f9df34309c0 // indirect
 )
