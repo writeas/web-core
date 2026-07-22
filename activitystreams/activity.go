@@ -4,6 +4,8 @@ package activitystreams
 
 import (
 	"time"
+
+	"github.com/writeas/web-core/id"
 )
 
 const (
@@ -75,6 +77,40 @@ func NewUpdateActivity(o *Object) *Activity {
 	}
 	if o.Updated != nil && !o.Updated.IsZero() {
 		a.Updated = o.Updated
+	}
+	return &a
+}
+
+// ActorActivity describes an action whose object is a full actor (Person),
+// such as an Update to a profile's name, summary, or icon. It parallels
+// Activity, which instead carries a content *Object.
+type ActorActivity struct {
+	BaseObject
+	Actor   string     `json:"actor"`
+	Updated *time.Time `json:"updated,omitempty"`
+	To      []string   `json:"to,omitempty"`
+	CC      []string   `json:"cc,omitempty"`
+	Object  *Person    `json:"object"`
+}
+
+// NewUpdateActorActivity builds an Update activity whose object is the given
+// actor (Person), used to federate profile changes such as the actor's name,
+// summary, or icon. It addresses the public namespace and CCs the actor's
+// followers collection. The activity gets a unique ID derived from the actor's
+// IRI so remote instances don't dedupe repeated updates against one another.
+func NewUpdateActorActivity(p *Person) *ActorActivity {
+	a := ActorActivity{
+		BaseObject: BaseObject{
+			Context: []interface{}{
+				Namespace,
+			},
+			ID:   p.ID + "#update-" + id.GenerateFriendlyRandomString(20),
+			Type: "Update",
+		},
+		Actor:  p.ID,
+		To:     []string{ToPublic},
+		CC:     []string{p.Followers},
+		Object: p,
 	}
 	return &a
 }
