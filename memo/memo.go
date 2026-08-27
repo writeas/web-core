@@ -53,19 +53,21 @@ func (memo *Memo) Invalidate() bool {
 
 func (memo *Memo) Get() (value interface{}, err error) {
 	memo.mu.Lock()
-	if memo.cache == nil {
-		memo.cache = &entry{ready: make(chan struct{})}
+	e := memo.cache
+	if e == nil {
+		e = &entry{ready: make(chan struct{})}
+		memo.cache = e
 		memo.mu.Unlock()
 
-		memo.cache.res.value, memo.cache.res.err = memo.f()
+		e.res.value, e.res.err = memo.f()
 
-		close(memo.cache.ready)
+		close(e.ready)
 	} else {
 		memo.mu.Unlock()
 
-		<-memo.cache.ready
+		<-e.ready
 	}
-	return memo.cache.res.value, memo.cache.res.err
+	return e.res.value, e.res.err
 }
 
 // Reset forcibly resets the cache to nil without checking if the cache
